@@ -1,5 +1,7 @@
 package com.example.justjava2;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -56,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         displayPrice(calculatePrice(numberofcoffee));
     }
 
-
     public void submitOrder(View view) {
         displayPrice(calculatePrice(numberofcoffee));
         createOrderSumary(calculatePrice(numberofcoffee));
@@ -101,8 +102,20 @@ public class MainActivity extends AppCompatActivity {
                 "\nChocolate = " + chocolate +
                 "\ntotal = " + NumberFormat.getCurrencyInstance().format(orderPrice) +
                 "\nThank you!";
-        TextView priceTextView = (TextView) findViewById(R.id.fullOrder);
-        priceTextView.setText(ordertext);
+//        TextView priceTextView = (TextView) findViewById(R.id.fullOrder);
+//        priceTextView.setText(ordertext);
+        composeEmail("coffeeOrder", ordertext);
 
     }
+
+    public void composeEmail(String subject, String fullOrder) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, fullOrder);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
 }
