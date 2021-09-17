@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">gewoonjava</string>
+    <string name="Toppings">Toppings</string>
+    <string name="price">prijs</string>
+    <string name="whipped_cream">slagroom</string>
+    <string name="Chocolate">chocolade</string>
+    <string name="quantity">aantal</string>
+    <string name="order">bestelling</string>
+    <string name="total">totaal</string>
+    <string name="thank_you">dank u!</string>
+    <string name="name">naam</string>
+    <string name="order_summary">overzicht van de bestelling</string>
+</resources>

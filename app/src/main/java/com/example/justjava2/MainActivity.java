@@ -1,4 +1,4 @@
-package com.example.justjava;
+package com.example.justjava2;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,8 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.justjava.R;
 
 import java.text.NumberFormat;
 
