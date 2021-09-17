@@ -1,4 +1,4 @@
-package com.example.justjava2;
+package com.example.justjava;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.justjava.R;
 
 import java.text.NumberFormat;
 
@@ -96,12 +98,13 @@ public class MainActivity extends AppCompatActivity {
     private void createOrderSumary (int orderPrice){
         EditText nameInput = (EditText) findViewById(R.id.naam);
         String ordertext = "Order sumary" + "\n ";
-        ordertext += "\nname = " + nameInput.getText() +
-                "\nquantity = " + numberofcoffee +
-                "\nwhippedCream = " + whippedCream +
-                "\nChocolate = " + chocolate +
-                "\ntotal = " + NumberFormat.getCurrencyInstance().format(orderPrice) +
-                "\nThank you!";
+        ordertext +=
+                "\n" + getString(R.string.name)+ " = " + nameInput.getText() +
+                "\n" + getString(R.string.quantity)+ " = " + numberofcoffee +
+                "\n" + getString(R.string.whipped_cream) + " = " + whippedCream +
+                "\n" + getString(R.string.Chocolate) + " = " + chocolate +
+                "\n" + getString(R.string.total)  + " = " + NumberFormat.getCurrencyInstance().format(orderPrice) +
+                "\n" + getString(R.string.thank_you);
 //        TextView priceTextView = (TextView) findViewById(R.id.fullOrder);
 //        priceTextView.setText(ordertext);
         composeEmail("coffeeOrder", ordertext);
